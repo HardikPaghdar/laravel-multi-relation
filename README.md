@@ -1,31 +1,35 @@
-# Simple Laravel CRUD Demo
+# Laravel Multi-Relation CRUD Demo
 
-## Installation
+A small Laravel CRUD project for experimenting with model relationships and database-backed forms. The current README documents SQLite as the default database and Laravel's migration/seed workflow.
 
-We need composer to install all packages.
-Here the complete instruction to install composer https://getcomposer.org/doc/00-intro.md
+## Requirements
 
-Let's install all packages, by running this command from Terminal
+- PHP version supported by this repository's Laravel version
+- Composer
+- Node.js/npm only if frontend assets need to be built
 
-```
+## Install and run
+
+```bash
 composer install
-```
-
-Let's do some migration and seed with dummy data.
-
-```
+php artisan key:generate
 php artisan migrate --seed
-```
-
-And run the web server
-
-```
 php artisan serve
 ```
 
-Now, visit http://localhost:8000 to try the demo.
+Open [http://localhost:8000](http://localhost:8000).
+
+If the repository does not already contain a usable local environment file, copy the example configuration first:
+
+```bash
+cp .env.example .env
+```
+
+Configure database credentials locally before running migrations. The project README indicates SQLite is the default; check `config/database.php` and the current environment configuration before switching databases.
 
 ## Notes
 
-This demo use SQLite database by default.
-If you want to use another database, you can set configuration in `config/database.php`.
+- The migration/seed command may create or populate local development data.
+- Do not commit a real `.env` file, application key, database password, or production credentials.
+- Review Laravel, PHP, and Composer dependency versions before deploying.
+- Add validation, authorization, tests, and production configuration before using this demo with real data.
